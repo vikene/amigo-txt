@@ -8,6 +8,10 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.SEND_SMS" android:maxSdkVersion="19"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    
+    
 
     <application
         android:allowBackup="true"
@@ -25,6 +29,11 @@
         </activity>
         <activity android:name="activity2"
             ></activity>
+        <receiver android:name="in.vigneashsundar.page_navigation.IncomingMessage">
+            <intent-filter >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
